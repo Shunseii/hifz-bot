@@ -119,7 +119,7 @@ else
   mkswap /swapfile
   swapon /swapfile
   if ! grep -q '/swapfile' /etc/fstab; then
-    echo '/swapfile none swap sw 0 0' >> /etc/fstab
+    echo '/swapfile none swap sw 0 0' >>/etc/fstab
   fi
   echo "2GB swap created and enabled."
 fi
@@ -266,23 +266,24 @@ echo "       vim /home/hifzbot/.openclaw/.env"
 echo ""
 echo "  3. Switch to hifzbot and run OpenClaw onboarding:"
 echo "       su - hifzbot"
-echo "       openclaw onboard --install-daemon"
-echo "       (connect Discord as a channel during this step)"
+echo "       openclaw onboard"
+echo "       (choose Manual mode, install the gateway systemd service)"
 echo ""
-echo "  4. Generate a GitHub SSH key for the VPS:"
+echo "  4. Complete the Discord setup:"
+echo "       https://docs.openclaw.ai/channels/discord#cli"
+echo ""
+echo "  5. Generate a GitHub SSH key for the VPS:"
 echo "       ssh-keygen -t ed25519 -C hifz-vps-github -f ~/.ssh/github"
 echo "       cat ~/.ssh/github.pub"
 echo "       (add the output to GitHub → Settings → SSH Keys)"
+echo "       Then configure SSH to use it:"
+echo "       echo -e 'Host github.com\n  IdentityFile ~/.ssh/github\n  IdentitiesOnly yes' >> ~/.ssh/config"
+echo "       chmod 600 ~/.ssh/config"
+echo "       ssh -T git@github.com   # verify it works"
 echo ""
-echo "  5. Clone the repo and deploy skill files:"
+echo "  6. Clone the repo and deploy skill files:"
 echo "       git clone git@github.com:YOUR_USERNAME/hifz-bot.git ~/hifz-bot"
 echo "       cd ~/hifz-bot && chmod +x deploy.sh && ./deploy.sh"
-echo ""
-echo "  6. Start OpenClaw with pm2:"
-echo "       pm2 start openclaw --name hifzbot"
-echo "       pm2 save"
-echo "       pm2 startup"
-echo "       (run the command pm2 startup prints as root)"
 echo ""
 echo "  7. Set up the private data repo:"
 echo "       mkdir ~/hifz-bot-data && cd ~/hifz-bot-data"

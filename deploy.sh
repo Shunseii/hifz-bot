@@ -11,6 +11,6 @@ cp -r skill/prompts ~/.openclaw/skills/hifz/
 cp -r skill/data ~/.openclaw/skills/hifz/
 
 echo "Restarting OpenClaw..."
-pm2 restart hifzbot
+systemctl --user restart openclaw-gateway
 
 echo "Done."

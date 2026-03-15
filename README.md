@@ -49,7 +49,13 @@ Before setting up the VPS you need:
 - An SSH key pair for accessing the VPS
 - An [Anthropic](https://console.anthropic.com) API key (Claude Sonnet)
 - A [Thaura](https://thaura.ai) API key
-- A Discord bot token — create one at discord.com/developers
+- A Discord bot token — see [Discord setup](#discord-setup) below
+
+---
+
+## Discord Setup
+
+Follow the [OpenClaw Discord quick setup guide](https://docs.openclaw.ai/channels/discord#quick-setup) to create your bot, configure permissions, and get your bot token.
 
 ---
 
@@ -98,7 +104,7 @@ sudo ./setup.sh
 The script will:
 
 - Update the OS
-- Install Node.js LTS, pm2, fail2ban, unattended-upgrades
+- Install Node.js LTS, fail2ban, unattended-upgrades
 - Create the `hifzbot` non-root user
 - Copy your SSH key to the hifzbot user
 - Install OpenClaw under hifzbot
@@ -129,68 +135,47 @@ cat /home/hifzbot/.ssh/authorized_keys
 
 ### 6. Fill in the .env file
 
+The setup script already creates `~/.openclaw/.env` from `.env.example`
+with correct permissions. Fill in your API keys and Discord bot token:
+
 ```bash
 ssh hifzbot@YOUR_SERVER_IP
-cp ~/hifz-bot/.env.example ~/.openclaw/skills/hifz/.env
-vim ~/.openclaw/skills/hifz/.env
-# Fill in your API keys
-chmod 600 ~/.openclaw/skills/hifz/.env
+vim ~/.openclaw/.env
 ```
 
-Verify permissions:
+Generate a gateway auth token and add it to the `.env`:
 
 ```bash
-ls -la ~/.openclaw/skills/hifz/.env
-# Expected: -rw------- (600)
+openssl rand -hex 32
 ```
 
 ### 7. Run OpenClaw onboarding
 
 ```bash
 # As hifzbot user
-openclaw onboard --install-daemon
+openclaw onboard
 ```
 
-During onboarding:
+Choose **Manual** mode during onboarding. Recommended settings:
 
-- Choose Anthropic as your AI provider
-- Enter your API key when prompted
-- Connect Discord as a channel using your bot token
-- Set your preferred model to `claude-sonnet-4-5`
-- Let it install as a daemon
+- **Gateway bind:** Loopback (127.0.0.1)
+- **Gateway auth:** Token
+- **Tailscale:** Off
+- **Discord:** Configure via the [Discord setup guide](https://docs.openclaw.ai/channels/discord#cli)
+- **Install Gateway service:** Yes (installs a systemd service)
+
+Disable memory search (not needed — the bot reads `MEMORY.md` and
+`hifz.json` directly):
+
+```bash
+openclaw config set agents.defaults.memorySearch.enabled false
+```
 
 Verify the gateway is running:
 
 ```bash
-openclaw gateway status
-```
-
-### 8. Configure openclaw.json
-
-```bash
-vim ~/.openclaw/openclaw.json
-```
-
-Add or verify:
-
-```json
-{
-  "models": {
-    "default": "anthropic/claude-sonnet-4-5",
-    "providers": {
-      "anthropic": {
-        "apiKey": { "source": "env", "id": "ANTHROPIC_API_KEY" }
-      }
-    }
-  },
-  "agents": {
-    "defaults": {
-      "heartbeat": {
-        "every": "24h"
-      }
-    }
-  }
-}
+systemctl --user status openclaw-gateway
+openclaw doctor
 ```
 
 ---
@@ -252,25 +237,7 @@ openclaw skills list
 # Should show: hifz
 ```
 
-### 11. Start OpenClaw with pm2
-
-```bash
-pm2 start openclaw --name hifzbot
-pm2 save
-pm2 startup
-```
-
-The `pm2 startup` command prints a command to run as root for
-auto-start on reboot. Copy and run it.
-
-Verify:
-
-```bash
-pm2 status
-pm2 logs hifzbot --lines 50
-```
-
-### 12. Set up the private data repo
+### 11. Set up the private data repo
 
 Create a private repo called `hifz-bot-data` on GitHub, then:
 
@@ -291,7 +258,7 @@ git push -u origin master
 OpenClaw populates `MEMORY.md` automatically during onboarding and
 conversations — no need to seed it manually.
 
-### 13. Set up the backup cron
+### 12. Set up the backup cron
 
 ```bash
 crontab -e
@@ -307,7 +274,7 @@ Add:
 
 ## Part 4 — First Use
 
-### 14. Test Discord connection
+### 13. Test Discord connection
 
 Send your bot a message in Discord:
 
@@ -317,7 +284,7 @@ hello
 
 If it responds, OpenClaw is running and Discord is connected.
 
-### 15. Run hifz onboarding
+### 14. Run hifz onboarding
 
 ```
 I want to set up my hifz tracking
@@ -333,7 +300,7 @@ Verify it was created:
 cat ~/.openclaw/skills/hifz/data/hifz.json
 ```
 
-### 16. Verify the first heartbeat
+### 15. Verify the first heartbeat
 
 To test immediately:
 
@@ -428,16 +395,16 @@ Reply yes, no, or partially.
 **Bot not responding on Discord**
 
 ```bash
-pm2 status
-pm2 logs hifzbot --lines 100
-openclaw gateway status
+systemctl --user status openclaw-gateway
+journalctl --user -u openclaw-gateway --lines 100
+openclaw doctor
 ```
 
 **Heartbeat not firing**
 
 ```bash
 cat ~/.openclaw/workspace/HEARTBEAT.md
-pm2 restart hifzbot
+systemctl --user restart openclaw-gateway
 ```
 
 **Skill not found after deploy**
@@ -450,7 +417,7 @@ ls ~/.openclaw/skills/hifz/
 **hifz.json not updating after sessions**
 
 - Check `.env` has correct API keys
-- Check pm2 logs for API errors
+- Check logs: `journalctl --user -u openclaw-gateway --lines 100`
 
 **Git push failing from VPS**
 
@@ -484,12 +451,11 @@ grep PasswordAuthentication /etc/ssh/sshd_config
 grep PermitRootLogin /etc/ssh/sshd_config
 
 # .env permissions
-ls -la ~/.openclaw/skills/hifz/.env
+ls -la ~/.openclaw/.env
 # Expected: -rw-------
 
-# data/ permissions
-ls -la ~/.openclaw/skills/hifz/
-# Expected: drwx------ for data/
+# OpenClaw security audit
+openclaw security audit
 ```
 
 ---
