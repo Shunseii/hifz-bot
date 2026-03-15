@@ -50,20 +50,20 @@ section() {
 # ==========================================================================
 # 1. System update
 # ==========================================================================
-section "1/12  Updating system packages"
+section "1/13  Updating system packages"
 apt-get update -y
 apt-get upgrade -y
 
 # ==========================================================================
 # 2. Install required packages
 # ==========================================================================
-section "2/12  Installing required packages"
+section "2/13  Installing required packages"
 apt-get install -y curl git ufw fail2ban unattended-upgrades
 
 # ==========================================================================
 # 3. Install Node.js LTS (22.x)
 # ==========================================================================
-section "3/12  Installing Node.js 22 LTS"
+section "3/13  Installing Node.js 22 LTS"
 
 if command -v node &>/dev/null; then
   NODE_MAJOR=$(node --version | sed 's/v\([0-9]*\).*/\1/')
@@ -84,7 +84,7 @@ echo "Node: $(node --version)  npm: $(npm --version)"
 # ==========================================================================
 # 4. Create non-root user: hifzbot
 # ==========================================================================
-section "4/12  Creating hifzbot user"
+section "4/13  Creating hifzbot user"
 
 if id "hifzbot" &>/dev/null; then
   echo "User hifzbot already exists — skipping creation."
@@ -93,7 +93,7 @@ else
   echo "User hifzbot created."
 fi
 
-# Copy SSH authorized_keys so 1Password key works for hifzbot
+# Copy SSH authorized_keys so the same key works for hifzbot
 mkdir -p /home/hifzbot/.ssh
 cp /root/.ssh/authorized_keys /home/hifzbot/.ssh/authorized_keys
 chown -R hifzbot:hifzbot /home/hifzbot/.ssh
@@ -102,9 +102,32 @@ chmod 600 /home/hifzbot/.ssh/authorized_keys
 echo "SSH keys copied to hifzbot."
 
 # ==========================================================================
-# 5. Install OpenClaw
+# 5. Create swap (prevents OOM on small VPS during npm install)
 # ==========================================================================
-section "5/12  Installing OpenClaw"
+section "5/13  Checking swap"
+
+TOTAL_RAM_MB=$(awk '/MemTotal/ {printf "%d", $2 / 1024}' /proc/meminfo)
+
+if [[ "$TOTAL_RAM_MB" -ge 2048 ]]; then
+  echo "RAM is ${TOTAL_RAM_MB}MB — swap not needed, skipping."
+elif swapon --show | grep -q '/swapfile'; then
+  echo "Swap already active — skipping."
+else
+  echo "RAM is ${TOTAL_RAM_MB}MB — creating 2GB swap to avoid OOM during npm install..."
+  fallocate -l 2G /swapfile
+  chmod 600 /swapfile
+  mkswap /swapfile
+  swapon /swapfile
+  if ! grep -q '/swapfile' /etc/fstab; then
+    echo '/swapfile none swap sw 0 0' >> /etc/fstab
+  fi
+  echo "2GB swap created and enabled."
+fi
+
+# ==========================================================================
+# 6. Install OpenClaw
+# ==========================================================================
+section "6/13  Installing OpenClaw"
 
 if sudo -u hifzbot bash -c 'command -v openclaw' &>/dev/null; then
   echo "OpenClaw already installed — skipping."
@@ -119,7 +142,7 @@ echo "interactive input and must be done manually after this script."
 # ==========================================================================
 # 6. Configure UFW firewall
 # ==========================================================================
-section "6/12  Configuring UFW firewall"
+section "7/13  Configuring UFW firewall"
 
 ufw default deny incoming
 ufw default allow outgoing
@@ -133,7 +156,7 @@ ufw status verbose
 # ==========================================================================
 # 7. Configure fail2ban
 # ==========================================================================
-section "7/12  Configuring fail2ban"
+section "8/13  Configuring fail2ban"
 
 systemctl enable fail2ban
 systemctl start fail2ban
@@ -142,7 +165,7 @@ echo "fail2ban is active — SSH protection enabled by default."
 # ==========================================================================
 # 8. Configure automatic security updates
 # ==========================================================================
-section "8/12  Configuring unattended-upgrades"
+section "9/13  Configuring unattended-upgrades"
 
 cat >/etc/apt/apt.conf.d/20auto-upgrades <<'EOF'
 APT::Periodic::Update-Package-Lists "1";
@@ -165,7 +188,7 @@ echo "Automatic security updates enabled."
 # ==========================================================================
 # 9. Harden SSH
 # ==========================================================================
-section "9/12  Hardening SSH configuration"
+section "10/13  Hardening SSH configuration"
 
 SSHD_CONFIG="/etc/ssh/sshd_config"
 
@@ -196,7 +219,7 @@ echo "SSH hardened: password auth disabled, root login disabled."
 # ==========================================================================
 # 10. Create skill directory structure
 # ==========================================================================
-section "10/12  Creating skill directory structure"
+section "11/13  Creating skill directory structure"
 
 SKILL_DIR="/home/hifzbot/openclaw-skills/hifz"
 
@@ -219,7 +242,7 @@ fi
 # ==========================================================================
 # 11. Set file permissions
 # ==========================================================================
-section "11/12  Setting file permissions"
+section "12/13  Setting file permissions"
 
 chown -R hifzbot:hifzbot /home/hifzbot/openclaw-skills
 chown -R hifzbot:hifzbot "${ENV_DIR}"
@@ -231,7 +254,7 @@ echo "Permissions set."
 # ==========================================================================
 # 12. Final summary
 # ==========================================================================
-section "12/12  Setup complete!"
+section "13/13  Setup complete!"
 
 echo "  Next steps (do these manually in order):"
 echo ""
