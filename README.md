@@ -95,7 +95,6 @@ ssh root@YOUR_SERVER_IP
 # Clone and run setup
 git clone https://github.com/YOUR_USERNAME/hifz-bot.git ~/hifz-bot
 cd ~/hifz-bot
-chmod +x setup.sh
 sudo ./setup.sh
 ```
 
@@ -233,7 +232,6 @@ ssh -T git@github.com
 
 ```bash
 cd ~/hifz-bot
-chmod +x deploy.sh
 ./deploy.sh
 ```
 
