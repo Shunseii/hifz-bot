@@ -1,0 +1,1028 @@
+[
+  {
+    "number": 1,
+    "name": "الفاتحة",
+    "transliteration": "Al-Fatihah",
+    "startPage": 1,
+    "endPage": 1,
+    "ayahCount": 7,
+    "juz": [1]
+  },
+  {
+    "number": 2,
+    "name": "البقرة",
+    "transliteration": "Al-Baqarah",
+    "startPage": 2,
+    "endPage": 49,
+    "ayahCount": 286,
+    "juz": [1, 2, 3]
+  },
+  {
+    "number": 3,
+    "name": "آل عمران",
+    "transliteration": "Ali 'Imran",
+    "startPage": 50,
+    "endPage": 76,
+    "ayahCount": 200,
+    "juz": [3, 4]
+  },
+  {
+    "number": 4,
+    "name": "النساء",
+    "transliteration": "An-Nisa",
+    "startPage": 77,
+    "endPage": 106,
+    "ayahCount": 176,
+    "juz": [4, 5, 6]
+  },
+  {
+    "number": 5,
+    "name": "المائدة",
+    "transliteration": "Al-Ma'idah",
+    "startPage": 106,
+    "endPage": 127,
+    "ayahCount": 120,
+    "juz": [6, 7]
+  },
+  {
+    "number": 6,
+    "name": "الأنعام",
+    "transliteration": "Al-An'am",
+    "startPage": 128,
+    "endPage": 150,
+    "ayahCount": 165,
+    "juz": [7, 8]
+  },
+  {
+    "number": 7,
+    "name": "الأعراف",
+    "transliteration": "Al-A'raf",
+    "startPage": 151,
+    "endPage": 176,
+    "ayahCount": 206,
+    "juz": [8, 9]
+  },
+  {
+    "number": 8,
+    "name": "الأنفال",
+    "transliteration": "Al-Anfal",
+    "startPage": 177,
+    "endPage": 186,
+    "ayahCount": 75,
+    "juz": [9, 10]
+  },
+  {
+    "number": 9,
+    "name": "التوبة",
+    "transliteration": "At-Tawbah",
+    "startPage": 187,
+    "endPage": 207,
+    "ayahCount": 129,
+    "juz": [10, 11]
+  },
+  {
+    "number": 10,
+    "name": "يونس",
+    "transliteration": "Yunus",
+    "startPage": 208,
+    "endPage": 221,
+    "ayahCount": 109,
+    "juz": [11]
+  },
+  {
+    "number": 11,
+    "name": "هود",
+    "transliteration": "Hud",
+    "startPage": 221,
+    "endPage": 235,
+    "ayahCount": 123,
+    "juz": [11, 12]
+  },
+  {
+    "number": 12,
+    "name": "يوسف",
+    "transliteration": "Yusuf",
+    "startPage": 235,
+    "endPage": 248,
+    "ayahCount": 111,
+    "juz": [12, 13]
+  },
+  {
+    "number": 13,
+    "name": "الرعد",
+    "transliteration": "Ar-Ra'd",
+    "startPage": 249,
+    "endPage": 255,
+    "ayahCount": 43,
+    "juz": [13]
+  },
+  {
+    "number": 14,
+    "name": "ابراهيم",
+    "transliteration": "Ibrahim",
+    "startPage": 255,
+    "endPage": 261,
+    "ayahCount": 52,
+    "juz": [13]
+  },
+  {
+    "number": 15,
+    "name": "الحجر",
+    "transliteration": "Al-Hijr",
+    "startPage": 262,
+    "endPage": 267,
+    "ayahCount": 99,
+    "juz": [14]
+  },
+  {
+    "number": 16,
+    "name": "النحل",
+    "transliteration": "An-Nahl",
+    "startPage": 267,
+    "endPage": 281,
+    "ayahCount": 128,
+    "juz": [14]
+  },
+  {
+    "number": 17,
+    "name": "الإسراء",
+    "transliteration": "Al-Isra",
+    "startPage": 282,
+    "endPage": 293,
+    "ayahCount": 111,
+    "juz": [15]
+  },
+  {
+    "number": 18,
+    "name": "الكهف",
+    "transliteration": "Al-Kahf",
+    "startPage": 293,
+    "endPage": 304,
+    "ayahCount": 110,
+    "juz": [15, 16]
+  },
+  {
+    "number": 19,
+    "name": "مريم",
+    "transliteration": "Maryam",
+    "startPage": 305,
+    "endPage": 312,
+    "ayahCount": 98,
+    "juz": [16]
+  },
+  {
+    "number": 20,
+    "name": "طه",
+    "transliteration": "Taha",
+    "startPage": 312,
+    "endPage": 321,
+    "ayahCount": 135,
+    "juz": [16]
+  },
+  {
+    "number": 21,
+    "name": "الأنبياء",
+    "transliteration": "Al-Anbya",
+    "startPage": 322,
+    "endPage": 331,
+    "ayahCount": 112,
+    "juz": [17]
+  },
+  {
+    "number": 22,
+    "name": "الحج",
+    "transliteration": "Al-Hajj",
+    "startPage": 332,
+    "endPage": 341,
+    "ayahCount": 78,
+    "juz": [17]
+  },
+  {
+    "number": 23,
+    "name": "المؤمنون",
+    "transliteration": "Al-Mu'minun",
+    "startPage": 342,
+    "endPage": 349,
+    "ayahCount": 118,
+    "juz": [18]
+  },
+  {
+    "number": 24,
+    "name": "النور",
+    "transliteration": "An-Nur",
+    "startPage": 350,
+    "endPage": 359,
+    "ayahCount": 64,
+    "juz": [18]
+  },
+  {
+    "number": 25,
+    "name": "الفرقان",
+    "transliteration": "Al-Furqan",
+    "startPage": 359,
+    "endPage": 366,
+    "ayahCount": 77,
+    "juz": [18, 19]
+  },
+  {
+    "number": 26,
+    "name": "الشعراء",
+    "transliteration": "Ash-Shu'ara",
+    "startPage": 367,
+    "endPage": 376,
+    "ayahCount": 227,
+    "juz": [19]
+  },
+  {
+    "number": 27,
+    "name": "النمل",
+    "transliteration": "An-Naml",
+    "startPage": 377,
+    "endPage": 385,
+    "ayahCount": 93,
+    "juz": [19, 20]
+  },
+  {
+    "number": 28,
+    "name": "القصص",
+    "transliteration": "Al-Qasas",
+    "startPage": 385,
+    "endPage": 396,
+    "ayahCount": 88,
+    "juz": [20]
+  },
+  {
+    "number": 29,
+    "name": "العنكبوت",
+    "transliteration": "Al-'Ankabut",
+    "startPage": 396,
+    "endPage": 404,
+    "ayahCount": 69,
+    "juz": [20, 21]
+  },
+  {
+    "number": 30,
+    "name": "الروم",
+    "transliteration": "Ar-Rum",
+    "startPage": 404,
+    "endPage": 410,
+    "ayahCount": 60,
+    "juz": [21]
+  },
+  {
+    "number": 31,
+    "name": "لقمان",
+    "transliteration": "Luqman",
+    "startPage": 411,
+    "endPage": 414,
+    "ayahCount": 34,
+    "juz": [21]
+  },
+  {
+    "number": 32,
+    "name": "السجدة",
+    "transliteration": "As-Sajdah",
+    "startPage": 415,
+    "endPage": 417,
+    "ayahCount": 30,
+    "juz": [21]
+  },
+  {
+    "number": 33,
+    "name": "الأحزاب",
+    "transliteration": "Al-Ahzab",
+    "startPage": 418,
+    "endPage": 427,
+    "ayahCount": 73,
+    "juz": [21, 22]
+  },
+  {
+    "number": 34,
+    "name": "سبإ",
+    "transliteration": "Saba",
+    "startPage": 428,
+    "endPage": 434,
+    "ayahCount": 54,
+    "juz": [22]
+  },
+  {
+    "number": 35,
+    "name": "فاطر",
+    "transliteration": "Fatir",
+    "startPage": 434,
+    "endPage": 440,
+    "ayahCount": 45,
+    "juz": [22]
+  },
+  {
+    "number": 36,
+    "name": "يس",
+    "transliteration": "Ya-Sin",
+    "startPage": 440,
+    "endPage": 445,
+    "ayahCount": 83,
+    "juz": [22, 23]
+  },
+  {
+    "number": 37,
+    "name": "الصافات",
+    "transliteration": "As-Saffat",
+    "startPage": 446,
+    "endPage": 452,
+    "ayahCount": 182,
+    "juz": [23]
+  },
+  {
+    "number": 38,
+    "name": "ص",
+    "transliteration": "Sad",
+    "startPage": 453,
+    "endPage": 458,
+    "ayahCount": 88,
+    "juz": [23]
+  },
+  {
+    "number": 39,
+    "name": "الزمر",
+    "transliteration": "Az-Zumar",
+    "startPage": 458,
+    "endPage": 467,
+    "ayahCount": 75,
+    "juz": [23, 24]
+  },
+  {
+    "number": 40,
+    "name": "غافر",
+    "transliteration": "Ghafir",
+    "startPage": 467,
+    "endPage": 476,
+    "ayahCount": 85,
+    "juz": [24]
+  },
+  {
+    "number": 41,
+    "name": "فصلت",
+    "transliteration": "Fussilat",
+    "startPage": 477,
+    "endPage": 482,
+    "ayahCount": 54,
+    "juz": [24, 25]
+  },
+  {
+    "number": 42,
+    "name": "الشورى",
+    "transliteration": "Ash-Shuraa",
+    "startPage": 483,
+    "endPage": 489,
+    "ayahCount": 53,
+    "juz": [25]
+  },
+  {
+    "number": 43,
+    "name": "الزخرف",
+    "transliteration": "Az-Zukhruf",
+    "startPage": 489,
+    "endPage": 495,
+    "ayahCount": 89,
+    "juz": [25]
+  },
+  {
+    "number": 44,
+    "name": "الدخان",
+    "transliteration": "Ad-Dukhan",
+    "startPage": 496,
+    "endPage": 498,
+    "ayahCount": 59,
+    "juz": [25]
+  },
+  {
+    "number": 45,
+    "name": "الجاثية",
+    "transliteration": "Al-Jathiyah",
+    "startPage": 499,
+    "endPage": 502,
+    "ayahCount": 37,
+    "juz": [25]
+  },
+  {
+    "number": 46,
+    "name": "الأحقاف",
+    "transliteration": "Al-Ahqaf",
+    "startPage": 502,
+    "endPage": 506,
+    "ayahCount": 35,
+    "juz": [26]
+  },
+  {
+    "number": 47,
+    "name": "محمد",
+    "transliteration": "Muhammad",
+    "startPage": 507,
+    "endPage": 510,
+    "ayahCount": 38,
+    "juz": [26]
+  },
+  {
+    "number": 48,
+    "name": "الفتح",
+    "transliteration": "Al-Fath",
+    "startPage": 511,
+    "endPage": 515,
+    "ayahCount": 29,
+    "juz": [26]
+  },
+  {
+    "number": 49,
+    "name": "الحجرات",
+    "transliteration": "Al-Hujurat",
+    "startPage": 515,
+    "endPage": 517,
+    "ayahCount": 18,
+    "juz": [26]
+  },
+  {
+    "number": 50,
+    "name": "ق",
+    "transliteration": "Qaf",
+    "startPage": 518,
+    "endPage": 520,
+    "ayahCount": 45,
+    "juz": [26]
+  },
+  {
+    "number": 51,
+    "name": "الذاريات",
+    "transliteration": "Adh-Dhariyat",
+    "startPage": 520,
+    "endPage": 523,
+    "ayahCount": 60,
+    "juz": [26, 27]
+  },
+  {
+    "number": 52,
+    "name": "الطور",
+    "transliteration": "At-Tur",
+    "startPage": 523,
+    "endPage": 525,
+    "ayahCount": 49,
+    "juz": [27]
+  },
+  {
+    "number": 53,
+    "name": "النجم",
+    "transliteration": "An-Najm",
+    "startPage": 526,
+    "endPage": 528,
+    "ayahCount": 62,
+    "juz": [27]
+  },
+  {
+    "number": 54,
+    "name": "القمر",
+    "transliteration": "Al-Qamar",
+    "startPage": 528,
+    "endPage": 531,
+    "ayahCount": 55,
+    "juz": [27]
+  },
+  {
+    "number": 55,
+    "name": "الرحمن",
+    "transliteration": "Ar-Rahman",
+    "startPage": 531,
+    "endPage": 534,
+    "ayahCount": 78,
+    "juz": [27]
+  },
+  {
+    "number": 56,
+    "name": "الواقعة",
+    "transliteration": "Al-Waqi'ah",
+    "startPage": 534,
+    "endPage": 537,
+    "ayahCount": 96,
+    "juz": [27]
+  },
+  {
+    "number": 57,
+    "name": "الحديد",
+    "transliteration": "Al-Hadid",
+    "startPage": 537,
+    "endPage": 541,
+    "ayahCount": 29,
+    "juz": [27]
+  },
+  {
+    "number": 58,
+    "name": "المجادلة",
+    "transliteration": "Al-Mujadila",
+    "startPage": 542,
+    "endPage": 545,
+    "ayahCount": 22,
+    "juz": [28]
+  },
+  {
+    "number": 59,
+    "name": "الحشر",
+    "transliteration": "Al-Hashr",
+    "startPage": 545,
+    "endPage": 548,
+    "ayahCount": 24,
+    "juz": [28]
+  },
+  {
+    "number": 60,
+    "name": "الممتحنة",
+    "transliteration": "Al-Mumtahanah",
+    "startPage": 549,
+    "endPage": 551,
+    "ayahCount": 13,
+    "juz": [28]
+  },
+  {
+    "number": 61,
+    "name": "الصف",
+    "transliteration": "As-Saf",
+    "startPage": 551,
+    "endPage": 552,
+    "ayahCount": 14,
+    "juz": [28]
+  },
+  {
+    "number": 62,
+    "name": "الجمعة",
+    "transliteration": "Al-Jumu'ah",
+    "startPage": 553,
+    "endPage": 554,
+    "ayahCount": 11,
+    "juz": [28]
+  },
+  {
+    "number": 63,
+    "name": "المنافقون",
+    "transliteration": "Al-Munafiqun",
+    "startPage": 554,
+    "endPage": 555,
+    "ayahCount": 11,
+    "juz": [28]
+  },
+  {
+    "number": 64,
+    "name": "التغابن",
+    "transliteration": "At-Taghabun",
+    "startPage": 556,
+    "endPage": 557,
+    "ayahCount": 18,
+    "juz": [28]
+  },
+  {
+    "number": 65,
+    "name": "الطلاق",
+    "transliteration": "At-Talaq",
+    "startPage": 558,
+    "endPage": 559,
+    "ayahCount": 12,
+    "juz": [28]
+  },
+  {
+    "number": 66,
+    "name": "التحريم",
+    "transliteration": "At-Tahrim",
+    "startPage": 560,
+    "endPage": 561,
+    "ayahCount": 12,
+    "juz": [28]
+  },
+  {
+    "number": 67,
+    "name": "الملك",
+    "transliteration": "Al-Mulk",
+    "startPage": 562,
+    "endPage": 564,
+    "ayahCount": 30,
+    "juz": [29]
+  },
+  {
+    "number": 68,
+    "name": "القلم",
+    "transliteration": "Al-Qalam",
+    "startPage": 564,
+    "endPage": 566,
+    "ayahCount": 52,
+    "juz": [29]
+  },
+  {
+    "number": 69,
+    "name": "الحاقة",
+    "transliteration": "Al-Haqqah",
+    "startPage": 566,
+    "endPage": 568,
+    "ayahCount": 52,
+    "juz": [29]
+  },
+  {
+    "number": 70,
+    "name": "المعارج",
+    "transliteration": "Al-Ma'arij",
+    "startPage": 568,
+    "endPage": 570,
+    "ayahCount": 44,
+    "juz": [29]
+  },
+  {
+    "number": 71,
+    "name": "نوح",
+    "transliteration": "Nuh",
+    "startPage": 570,
+    "endPage": 571,
+    "ayahCount": 28,
+    "juz": [29]
+  },
+  {
+    "number": 72,
+    "name": "الجن",
+    "transliteration": "Al-Jinn",
+    "startPage": 572,
+    "endPage": 573,
+    "ayahCount": 28,
+    "juz": [29]
+  },
+  {
+    "number": 73,
+    "name": "المزمل",
+    "transliteration": "Al-Muzzammil",
+    "startPage": 574,
+    "endPage": 575,
+    "ayahCount": 20,
+    "juz": [29]
+  },
+  {
+    "number": 74,
+    "name": "المدثر",
+    "transliteration": "Al-Muddaththir",
+    "startPage": 575,
+    "endPage": 577,
+    "ayahCount": 56,
+    "juz": [29]
+  },
+  {
+    "number": 75,
+    "name": "القيامة",
+    "transliteration": "Al-Qiyamah",
+    "startPage": 577,
+    "endPage": 578,
+    "ayahCount": 40,
+    "juz": [29]
+  },
+  {
+    "number": 76,
+    "name": "الانسان",
+    "transliteration": "Al-Insan",
+    "startPage": 578,
+    "endPage": 580,
+    "ayahCount": 31,
+    "juz": [29]
+  },
+  {
+    "number": 77,
+    "name": "المرسلات",
+    "transliteration": "Al-Mursalat",
+    "startPage": 580,
+    "endPage": 581,
+    "ayahCount": 50,
+    "juz": [29]
+  },
+  {
+    "number": 78,
+    "name": "النبإ",
+    "transliteration": "An-Naba",
+    "startPage": 582,
+    "endPage": 583,
+    "ayahCount": 40,
+    "juz": [30]
+  },
+  {
+    "number": 79,
+    "name": "النازعات",
+    "transliteration": "An-Nazi'at",
+    "startPage": 583,
+    "endPage": 584,
+    "ayahCount": 46,
+    "juz": [30]
+  },
+  {
+    "number": 80,
+    "name": "عبس",
+    "transliteration": "'Abasa",
+    "startPage": 585,
+    "endPage": 585,
+    "ayahCount": 42,
+    "juz": [30]
+  },
+  {
+    "number": 81,
+    "name": "التكوير",
+    "transliteration": "At-Takwir",
+    "startPage": 586,
+    "endPage": 586,
+    "ayahCount": 29,
+    "juz": [30]
+  },
+  {
+    "number": 82,
+    "name": "الإنفطار",
+    "transliteration": "Al-Infitar",
+    "startPage": 587,
+    "endPage": 587,
+    "ayahCount": 19,
+    "juz": [30]
+  },
+  {
+    "number": 83,
+    "name": "المطففين",
+    "transliteration": "Al-Mutaffifin",
+    "startPage": 587,
+    "endPage": 589,
+    "ayahCount": 36,
+    "juz": [30]
+  },
+  {
+    "number": 84,
+    "name": "الإنشقاق",
+    "transliteration": "Al-Inshiqaq",
+    "startPage": 589,
+    "endPage": 589,
+    "ayahCount": 25,
+    "juz": [30]
+  },
+  {
+    "number": 85,
+    "name": "البروج",
+    "transliteration": "Al-Buruj",
+    "startPage": 590,
+    "endPage": 590,
+    "ayahCount": 22,
+    "juz": [30]
+  },
+  {
+    "number": 86,
+    "name": "الطارق",
+    "transliteration": "At-Tariq",
+    "startPage": 591,
+    "endPage": 591,
+    "ayahCount": 17,
+    "juz": [30]
+  },
+  {
+    "number": 87,
+    "name": "الأعلى",
+    "transliteration": "Al-A'la",
+    "startPage": 591,
+    "endPage": 592,
+    "ayahCount": 19,
+    "juz": [30]
+  },
+  {
+    "number": 88,
+    "name": "الغاشية",
+    "transliteration": "Al-Ghashiyah",
+    "startPage": 592,
+    "endPage": 592,
+    "ayahCount": 26,
+    "juz": [30]
+  },
+  {
+    "number": 89,
+    "name": "الفجر",
+    "transliteration": "Al-Fajr",
+    "startPage": 593,
+    "endPage": 594,
+    "ayahCount": 30,
+    "juz": [30]
+  },
+  {
+    "number": 90,
+    "name": "البلد",
+    "transliteration": "Al-Balad",
+    "startPage": 594,
+    "endPage": 594,
+    "ayahCount": 20,
+    "juz": [30]
+  },
+  {
+    "number": 91,
+    "name": "الشمس",
+    "transliteration": "Ash-Shams",
+    "startPage": 595,
+    "endPage": 595,
+    "ayahCount": 15,
+    "juz": [30]
+  },
+  {
+    "number": 92,
+    "name": "الليل",
+    "transliteration": "Al-Layl",
+    "startPage": 595,
+    "endPage": 596,
+    "ayahCount": 21,
+    "juz": [30]
+  },
+  {
+    "number": 93,
+    "name": "الضحى",
+    "transliteration": "Ad-Duhaa",
+    "startPage": 596,
+    "endPage": 596,
+    "ayahCount": 11,
+    "juz": [30]
+  },
+  {
+    "number": 94,
+    "name": "الشرح",
+    "transliteration": "Ash-Sharh",
+    "startPage": 596,
+    "endPage": 596,
+    "ayahCount": 8,
+    "juz": [30]
+  },
+  {
+    "number": 95,
+    "name": "التين",
+    "transliteration": "At-Tin",
+    "startPage": 597,
+    "endPage": 597,
+    "ayahCount": 8,
+    "juz": [30]
+  },
+  {
+    "number": 96,
+    "name": "العلق",
+    "transliteration": "Al-'Alaq",
+    "startPage": 597,
+    "endPage": 597,
+    "ayahCount": 19,
+    "juz": [30]
+  },
+  {
+    "number": 97,
+    "name": "القدر",
+    "transliteration": "Al-Qadr",
+    "startPage": 598,
+    "endPage": 598,
+    "ayahCount": 5,
+    "juz": [30]
+  },
+  {
+    "number": 98,
+    "name": "البينة",
+    "transliteration": "Al-Bayyinah",
+    "startPage": 598,
+    "endPage": 599,
+    "ayahCount": 8,
+    "juz": [30]
+  },
+  {
+    "number": 99,
+    "name": "الزلزلة",
+    "transliteration": "Az-Zalzalah",
+    "startPage": 599,
+    "endPage": 599,
+    "ayahCount": 8,
+    "juz": [30]
+  },
+  {
+    "number": 100,
+    "name": "العاديات",
+    "transliteration": "Al-'Adiyat",
+    "startPage": 599,
+    "endPage": 600,
+    "ayahCount": 11,
+    "juz": [30]
+  },
+  {
+    "number": 101,
+    "name": "القارعة",
+    "transliteration": "Al-Qari'ah",
+    "startPage": 600,
+    "endPage": 600,
+    "ayahCount": 11,
+    "juz": [30]
+  },
+  {
+    "number": 102,
+    "name": "التكاثر",
+    "transliteration": "At-Takathur",
+    "startPage": 600,
+    "endPage": 600,
+    "ayahCount": 8,
+    "juz": [30]
+  },
+  {
+    "number": 103,
+    "name": "العصر",
+    "transliteration": "Al-'Asr",
+    "startPage": 601,
+    "endPage": 601,
+    "ayahCount": 3,
+    "juz": [30]
+  },
+  {
+    "number": 104,
+    "name": "الهمزة",
+    "transliteration": "Al-Humazah",
+    "startPage": 601,
+    "endPage": 601,
+    "ayahCount": 9,
+    "juz": [30]
+  },
+  {
+    "number": 105,
+    "name": "الفيل",
+    "transliteration": "Al-Fil",
+    "startPage": 601,
+    "endPage": 601,
+    "ayahCount": 5,
+    "juz": [30]
+  },
+  {
+    "number": 106,
+    "name": "قريش",
+    "transliteration": "Quraysh",
+    "startPage": 602,
+    "endPage": 602,
+    "ayahCount": 4,
+    "juz": [30]
+  },
+  {
+    "number": 107,
+    "name": "الماعون",
+    "transliteration": "Al-Ma'un",
+    "startPage": 602,
+    "endPage": 602,
+    "ayahCount": 7,
+    "juz": [30]
+  },
+  {
+    "number": 108,
+    "name": "الكوثر",
+    "transliteration": "Al-Kawthar",
+    "startPage": 602,
+    "endPage": 602,
+    "ayahCount": 3,
+    "juz": [30]
+  },
+  {
+    "number": 109,
+    "name": "الكافرون",
+    "transliteration": "Al-Kafirun",
+    "startPage": 603,
+    "endPage": 603,
+    "ayahCount": 6,
+    "juz": [30]
+  },
+  {
+    "number": 110,
+    "name": "النصر",
+    "transliteration": "An-Nasr",
+    "startPage": 603,
+    "endPage": 603,
+    "ayahCount": 3,
+    "juz": [30]
+  },
+  {
+    "number": 111,
+    "name": "المسد",
+    "transliteration": "Al-Masad",
+    "startPage": 603,
+    "endPage": 603,
+    "ayahCount": 5,
+    "juz": [30]
+  },
+  {
+    "number": 112,
+    "name": "الإخلاص",
+    "transliteration": "Al-Ikhlas",
+    "startPage": 604,
+    "endPage": 604,
+    "ayahCount": 4,
+    "juz": [30]
+  },
+  {
+    "number": 113,
+    "name": "الفلق",
+    "transliteration": "Al-Falaq",
+    "startPage": 604,
+    "endPage": 604,
+    "ayahCount": 5,
+    "juz": [30]
+  },
+  {
+    "number": 114,
+    "name": "الناس",
+    "transliteration": "An-Nas",
+    "startPage": 604,
+    "endPage": 604,
+    "ayahCount": 6,
+    "juz": [30]
+  }
+]
