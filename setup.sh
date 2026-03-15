@@ -229,7 +229,7 @@ mkdir -p "${SKILL_DIR}/data"
 # Write .env template only if it doesn't already exist
 ENV_DIR="/home/hifzbot/.openclaw"
 ENV_FILE="${ENV_DIR}/.env"
-REPO_DIR="/home/hifzbot/hifz-bot"
+REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
 mkdir -p "${ENV_DIR}"
 
 if [[ ! -f "${ENV_FILE}" ]]; then
