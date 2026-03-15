@@ -45,6 +45,11 @@ explicitly asks to set up or reset their hifz tracking.
   2. Append the `reviewEntries` array to data/review-history.json
      (create as `[]` if it doesn't exist)
   3. Then write any other hifz.json updates (reviewCount, lastReviewed, etc.)
+- Each page in hifz.json may have `lastAssigned` (date string) and
+  `consecutiveMisses` (integer) fields for tracking whether assigned pages
+  were actually reviewed. These are managed by the heartbeat prompt — do not
+  modify them during session logging. Treat missing fields as unset (no
+  previous assignment).
 - Never output raw JSON to the user — parse it silently and confirm with a
   plain message
 - If hifz.json does not exist, run the onboarding prompt before doing anything else
