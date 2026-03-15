@@ -22,8 +22,18 @@ Generate today's hifz plan:
 ## Scheduling Rules
 
 - 🔴 always included unless time budget is zero
+  - When there's a large contiguous block of red pages (>6 pages),
+    break it into manageable chunks (~5 pages per session)
+  - Schedule chunks sequentially over multiple days
+  - Always use contiguous ranges (e.g., 1–5, then 6–10)
+  - After showing today's chunk, note the plan for remaining chunks
+    (e.g., "Tomorrow: pages 6–10, Day 3: pages 11–15")
 - 🔵 next, prioritised by days since last review
 - 🟡 fills remaining time based on rotation cycle
+  - Rotate through the tier systematically using lastReviewed dates
+  - Always schedule contiguous chunks (e.g., 22–25 rather than 22, 25, 28, 31)
+  - If no lastReviewed data exists, start from the beginning of the tier
+    and advance sequentially in chunks across sessions
 - Never include new 🟢 assignments if pendingNewPages is not empty —
   always follow up on all pending pages first
 - Number of new pages assigned per session is controlled by the
