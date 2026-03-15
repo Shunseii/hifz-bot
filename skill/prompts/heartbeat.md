@@ -64,6 +64,20 @@ Generate today's hifz plan:
 [Arabic closing]
 ```
 
+## Assignment Tracking
+
+After generating the schedule, update hifz.json:
+
+1. Set `lastAssigned` to today's date for every page in the schedule
+2. For pages that were assigned yesterday but not reviewed (i.e.
+   `lastAssigned` is yesterday and `lastReviewed` is before yesterday),
+   increment `consecutiveMisses` by 1
+3. For pages with `consecutiveMisses` ≥ 5, auto-demote to `weak`
+   tier regardless of current tier
+
+This must happen silently — do not mention assignment tracking
+to the user in the message.
+
 ## Rules
 
 - If 3 or more pages in the same juz have weaknessScore above the
