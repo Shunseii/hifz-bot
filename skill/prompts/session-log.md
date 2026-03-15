@@ -58,10 +58,40 @@ Return ONLY valid JSON, no prose, no markdown fences:
     { "page": 59, "status": "confirmed" },
     { "page": 60, "status": "not_yet" }
   ],
-  "scoreUpdates": [
-    { "page": 5, "oldScore": 0.15, "newScore": 0.12 },
-    { "page": 8, "oldScore": 0.15, "newScore": 0.35 },
-    { "page": 12, "oldScore": 0.10, "newScore": 0.08 }
+  "reviewEntries": [
+    {
+      "page": 5,
+      "date": "2026-03-14",
+      "tier": "established",
+      "stability": 12.0,
+      "daysSinceReview": 6,
+      "oldScore": 0.15,
+      "newScore": 0.12,
+      "outcome": "clean",
+      "flagType": null
+    },
+    {
+      "page": 8,
+      "date": "2026-03-14",
+      "tier": "recent",
+      "stability": 4.5,
+      "daysSinceReview": 3,
+      "oldScore": 0.15,
+      "newScore": 0.35,
+      "outcome": "weak",
+      "flagType": "transition"
+    },
+    {
+      "page": 12,
+      "date": "2026-03-14",
+      "tier": "established",
+      "stability": 10.2,
+      "daysSinceReview": 5,
+      "oldScore": 0.10,
+      "newScore": 0.08,
+      "outcome": "clean",
+      "flagType": null
+    }
   ],
   "newAssignments": [],
   "needsClarification": false,
@@ -77,6 +107,21 @@ Return ONLY valid JSON, no prose, no markdown fences:
 
 **`newAssignments`** — array of page numbers the user wants to start memorizing, extracted from natural language (e.g. "starting 61 and 62 today").
 
+**`reviewEntries`** fields:
+
+- `outcome` — must be one of:
+  - `"clean"` — no issues reported for this page
+  - `"weak"` — any difficulty reported (general, transition, or mutashabih)
+- `flagType` — must be one of:
+  - `"transition"` — difficulty at the connection to an adjacent page
+  - `"mutashabih"` — confusion with a similar ayah elsewhere
+  - `"general"` — non-specific difficulty
+  - `null` — no flag (only when outcome is `"clean"`)
+- `oldScore` — the page's `weaknessScore` from hifz.json before this session
+- `newScore` — the computed score after applying the weakness score formula
+- `stability` — the page's current `stability` value from hifz.json (not yet implemented, use `null` for now)
+- `daysSinceReview` — days between `lastReviewed` in hifz.json and today
+
 ## Weakness Score Updates
 
 For every reviewed page, compute the new weaknessScore using the
@@ -86,7 +131,20 @@ page's current score from hifz.json:
 - **General weakness flag**: `newScore = min(currentScore + 0.3, 1.0)`
 - **Mutashabih or transition flag**: `newScore = min(currentScore + 0.2, 1.0)`
 
-Include the computed scores in the output under `scoreUpdates`.
+Include the computed scores in `reviewEntries` along with the page's
+pre-update state (tier, stability, daysSinceReview) and outcome.
+
+## Tier Mapping
+
+hifz.json currently stores tiers as emojis. Map them to enum values
+in `reviewEntries`:
+
+| hifz.json | reviewEntries |
+| --- | --- |
+| 🔴 | `weak` |
+| 🔵 | `recent` |
+| 🟡 | `established` |
+| 🟢 | `new` |
 
 ## Rules
 

@@ -13,6 +13,7 @@ intelligent daily scheduling and session tracking.
 All files are under {baseDir}:
 
 - `data/hifz.json` — progress store (read and write after every session)
+- `data/review-history.json` — append-only review log (write after every session)
 - `data/quran-index.json` — static Quran structure lookup (read only)
 - `prompts/heartbeat.md` — use for morning schedule generation
 - `prompts/session-log.md` — use for parsing session reports
@@ -38,7 +39,12 @@ explicitly asks to set up or reset their hifz tracking.
 
 - Always read hifz.json before generating a schedule or answering progress
   questions — never rely on memory alone for progress data
-- Always write updated hifz.json after a session is logged
+- After a session is logged, use `reviewEntries` from the session-log
+  output to:
+  1. Update each page's `weaknessScore` in hifz.json using `newScore`
+  2. Append the `reviewEntries` array to data/review-history.json
+     (create as `[]` if it doesn't exist)
+  3. Then write any other hifz.json updates (reviewCount, lastReviewed, etc.)
 - Never output raw JSON to the user — parse it silently and confirm with a
   plain message
 - If hifz.json does not exist, run the onboarding prompt before doing anything else
