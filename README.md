@@ -4,7 +4,7 @@ An OpenClaw skill for Quran memorization (hifz) tracking and scheduling. Sends a
 
 ## What It Does
 
-- **Morning heartbeat** — daily Discord message with pages to revise, review, and memorize, with time estimates
+- **Daily schedule** — automated Discord message with pages to revise, review, and memorize, with time estimates
 - **Session logging** — tell the bot what you reviewed in natural language, it updates your progress
 - **Intelligent scheduling** — four-tier system (🔴 Revision, 🔵 Recent Review, 🟡 Rotation, 🟢 New) that adapts to your pace and flags weak pages
 - **Arabic immersion** — greetings and encouragement in Arabic, scheduling instructions in English
@@ -18,7 +18,6 @@ hifz-bot/
   workspace/
     SOUL.md         ← agent personality and language rules
     AGENTS.md       ← emoji legend, tier rules, hard constraints
-    HEARTBEAT.md    ← daily schedule trigger
   skill/
     SKILL.md        ← skill definition and routing logic
     prompts/
@@ -267,7 +266,7 @@ crontab -e
 Add:
 
 ```
-0 2 * * * cd ~/hifz-bot-data && cp ~/.openclaw/skills/hifz/data/hifz.json hifz.json 2>/dev/null; cp ~/.openclaw/workspace/MEMORY.md MEMORY.md 2>/dev/null; git add . && git diff --cached --quiet || git commit -m "backup $(date +\%F)" && git push origin master
+0 2 * * * cd ~/hifz-bot-data && cp ~/.openclaw/skills/hifz/data/hifz.json hifz.json 2>/dev/null; cp ~/.openclaw/skills/hifz/data/review-history.json review-history.json 2>/dev/null; cp ~/.openclaw/workspace/MEMORY.md MEMORY.md 2>/dev/null; git add . && git diff --cached --quiet || git commit -m "backup $(date +\%F)" && git push origin master
 ```
 
 ---
@@ -300,15 +299,16 @@ Verify it was created:
 cat ~/.openclaw/skills/hifz/data/hifz.json
 ```
 
-### 15. Verify the first heartbeat
+### 15. Verify the daily schedule
 
-To test immediately:
+The onboarding creates a daily cron job automatically. To verify:
 
 ```bash
-openclaw message send --target discord --message "run heartbeat"
+openclaw cron list
+# Should show: "Daily hifz schedule"
 ```
 
-Or wait until the next morning and check Discord for your first
+Or wait until the scheduled time and check Discord for your first
 automated schedule message.
 
 ---
@@ -337,7 +337,7 @@ git pull origin master
 
 ### Morning schedule
 
-Arrives automatically via Discord at your configured heartbeat time.
+Arrives automatically via Discord at the time you chose during onboarding.
 
 ### Logging a session
 
@@ -383,10 +383,11 @@ Reply yes, no, or partially.
 
 ## Private Data
 
-| File        | Location on VPS                 | Backed up        |
-| ----------- | ------------------------------- | ---------------- |
-| `hifz.json` | `~/.openclaw/skills/hifz/data/` | Nightly via cron |
-| `MEMORY.md` | `~/.openclaw/workspace/`        | Nightly via cron |
+| File                   | Location on VPS                 | Backed up        |
+| ---------------------- | ------------------------------- | ---------------- |
+| `hifz.json`            | `~/.openclaw/skills/hifz/data/` | Nightly via cron |
+| `review-history.json`  | `~/.openclaw/skills/hifz/data/` | Nightly via cron |
+| `MEMORY.md`            | `~/.openclaw/workspace/`        | Nightly via cron |
 
 ---
 
@@ -400,10 +401,11 @@ journalctl --user -u openclaw-gateway --lines 100
 openclaw doctor
 ```
 
-**Heartbeat not firing**
+**Daily schedule not firing**
 
 ```bash
-cat ~/.openclaw/workspace/HEARTBEAT.md
+openclaw cron list
+openclaw cron runs "Daily hifz schedule"
 systemctl --user restart openclaw-gateway
 ```
 

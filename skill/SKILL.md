@@ -22,8 +22,8 @@ All files are under {baseDir}:
 
 ## When to Use Each Prompt
 
-**heartbeat.md** — when generating the daily schedule (triggered by heartbeat
-or when user asks for today's plan)
+**heartbeat.md** — when generating the daily schedule (triggered by the daily
+cron job or when the user asks for today's plan)
 
 **session-log.md** — when the user reports completing a session in natural
 language. Output must be valid JSON only — parse it and write the result back

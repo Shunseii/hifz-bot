@@ -10,6 +10,9 @@ cp skill/SKILL.md ~/.openclaw/skills/hifz/
 cp -r skill/prompts ~/.openclaw/skills/hifz/
 cp -r skill/data ~/.openclaw/skills/hifz/
 
+echo "Disabling heartbeat..."
+openclaw config set agents.defaults.heartbeat.every "0m"
+
 echo "Restarting OpenClaw..."
 systemctl --user restart openclaw-gateway
 

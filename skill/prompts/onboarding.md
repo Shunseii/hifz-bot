@@ -25,7 +25,7 @@ Collect the following information in order, one question at a time:
 2. Walk through their current Juz 1 state:
    - Ask them to describe which sections they feel solid on, which
      need work, and which are mostly forgotten
-   - Map their answer to page ranges using quran-index.json
+   - Map their answer to page ranges using data/quran-index.json
    - Assign 🔴 to forgotten/weak sections, 🔵 to solid but recent,
      🟡 to solid and established
    - Confirm the mapping back to them before proceeding
@@ -59,8 +59,9 @@ Collect the following information in order, one question at a time:
 
 ### Stage 5 — Soft Preferences
 
-1. What time should the morning heartbeat fire?
-2. What name or kunya should the assistant use for them?
+1. What time should the daily schedule be sent? (e.g. 7:00 AM)
+2. What timezone are they in? (e.g. Asia/Tokyo, America/New_York)
+3. What name or kunya should the assistant use for them?
 
 ## Confirmation
 
@@ -70,8 +71,10 @@ saving preferences to OpenClaw memory.
 
 ## Output (after confirmation)
 
-Once confirmed, output ONLY valid JSON — the initial hifz.json
-structure — with no prose:
+Once confirmed:
+
+1. Write the initial hifz.json to data/hifz.json in the hifz skill
+   directory. The structure should be:
 
 ```json
 {
@@ -88,6 +91,19 @@ structure — with no prose:
   }
 }
 ```
+
+   Confirm to the user that their progress file has been created.
+
+2. After writing hifz.json, create a daily cron job using the
+   cron.add tool with these settings:
+   - name: "Daily hifz schedule"
+   - cron: the time the user chose in Stage 5, converted to a cron
+     expression (e.g. "0 7 * * *" for 7:00 AM)
+   - tz: the user's timezone from Stage 5
+   - session: isolated
+   - message: "Read prompts/heartbeat.md from the hifz skill and generate today's review schedule. Send it to the user via Discord."
+
+   Confirm to the user that their daily schedule has been set up.
 
 ## Rules
 
