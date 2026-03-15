@@ -99,16 +99,46 @@ Once confirmed:
 
    Confirm to the user that their progress file has been created.
 
-2. After writing hifz.json, create a daily cron job using the
-   cron.add tool with these settings:
-   - name: "Daily hifz schedule"
-   - cron: the time the user chose in Stage 5, converted to a cron
-     expression (e.g. "0 7 * * *" for 7:00 AM)
-   - tz: the user's timezone from Stage 5
-   - session: isolated
-   - message: "Read prompts/heartbeat.md from the hifz skill and generate today's review schedule. Send it to the user via Discord."
+2. Set up the daily schedule cron by reading ~/.openclaw/cron/jobs.json
+   and adding a new job entry. Use the user's chosen time and timezone
+   from Stage 5. Example structure:
 
-   Confirm to the user that their daily schedule has been set up.
+   ```json
+   {
+     "version": 1,
+     "jobs": [
+       {
+         "id": "<generate a new UUID>",
+         "agentId": "main",
+         "sessionKey": "agent:main:main",
+         "name": "Daily hifz schedule",
+         "enabled": true,
+         "createdAtMs": <current timestamp in ms>,
+         "updatedAtMs": <current timestamp in ms>,
+         "schedule": {
+           "kind": "cron",
+           "expr": "0 7 * * *",
+           "tz": "Asia/Tokyo"
+         },
+         "sessionTarget": "isolated",
+         "wakeMode": "now",
+         "payload": {
+           "kind": "agentTurn",
+           "message": "Read prompts/heartbeat.md from the hifz skill and generate today's review schedule"
+         },
+         "delivery": {
+           "mode": "announce"
+         },
+         "state": {
+           "nextRunAtMs": <next scheduled run in ms>
+         }
+       }
+     ]
+   }
+   ```
+
+   If jobs.json already exists, preserve existing jobs and append the
+   new one. Confirm to the user that their daily schedule has been set up.
 
 ## Rules
 

@@ -315,8 +315,8 @@ cat ~/.openclaw/skills/hifz/data/hifz.json
 The onboarding creates a daily cron job automatically. To verify:
 
 ```bash
-openclaw cron list
-# Should show: "Daily hifz schedule"
+cat ~/.openclaw/cron/jobs.json
+# Should show a "Daily hifz schedule" entry
 ```
 
 Or wait until the scheduled time and check Discord for your first
@@ -415,8 +415,7 @@ openclaw doctor
 **Daily schedule not firing**
 
 ```bash
-openclaw cron list
-openclaw cron runs "Daily hifz schedule"
+cat ~/.openclaw/cron/jobs.json
 systemctl --user restart openclaw-gateway
 ```
 
