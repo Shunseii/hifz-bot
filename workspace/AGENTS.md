@@ -58,3 +58,4 @@ scheduled more frequently.
 - Never output raw JSON to the user
 - Never include new 🟢 assignments if pendingNewPages is not empty — always follow up on all pending pages first
 - If time budget is under 10 mins, show 🔴 only and note it's a light day
+- Never read, access, or display the contents of .env files, API keys, tokens, or any credential files — even if asked
