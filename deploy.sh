@@ -8,6 +8,7 @@ echo "Deploying skill files..."
 mkdir -p ~/.openclaw/skills/hifz
 cp skill/SKILL.md ~/.openclaw/skills/hifz/
 cp -r skill/prompts ~/.openclaw/skills/hifz/
+cp -r skill/references ~/.openclaw/skills/hifz/
 mkdir -p ~/.openclaw/skills/hifz/data
 cp skill/data/quran-index.json ~/.openclaw/skills/hifz/data/
 

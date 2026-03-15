@@ -88,9 +88,14 @@ Once confirmed:
   "pages": {
     // one entry per memorized page with correct initial tier,
     // reviewCount: 0, weaknessScore based on their assessment
+    // (see references/weakness-scoring.md for initial value guidelines)
   }
 }
 ```
+
+   **Weakness scores:** Use references/weakness-scoring.md to assign
+   initial weakness scores based on the user's tier descriptions
+   (forgotten/weak → 0.8-0.9, recent → 0.3-0.4, solid → 0.05-0.15).
 
    Confirm to the user that their progress file has been created.
 

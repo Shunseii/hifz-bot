@@ -125,11 +125,12 @@ Return ONLY valid JSON, no prose, no markdown fences:
 ## Weakness Score Updates
 
 For every reviewed page, compute the new weaknessScore using the
-page's current score from hifz.json:
+page's current score from hifz.json and the adjustment rules in
+**references/weakness-scoring.md**:
 
-- **Clean review** (no flag): `newScore = currentScore × 0.8`
-- **General weakness flag**: `newScore = min(currentScore + 0.3, 1.0)`
-- **Mutashabih or transition flag**: `newScore = min(currentScore + 0.2, 1.0)`
+- **Clean review** (no flag): `newScore = max(currentScore - 0.05, 0.0)`
+- **Minor issue** (mutashabih or transition flag): `newScore = min(currentScore + 0.08, 1.0)`
+- **Major issue** (general weakness flag): `newScore = min(currentScore + 0.15, 1.0)`
 
 Include the computed scores in `reviewEntries` along with the page's
 pre-update state (tier, stability, daysSinceReview) and outcome.
