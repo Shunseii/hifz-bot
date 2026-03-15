@@ -58,6 +58,11 @@ Return ONLY valid JSON, no prose, no markdown fences:
     { "page": 59, "status": "confirmed" },
     { "page": 60, "status": "not_yet" }
   ],
+  "scoreUpdates": [
+    { "page": 5, "oldScore": 0.15, "newScore": 0.12 },
+    { "page": 8, "oldScore": 0.15, "newScore": 0.35 },
+    { "page": 12, "oldScore": 0.10, "newScore": 0.08 }
+  ],
   "newAssignments": [],
   "needsClarification": false,
   "clarificationQuestion": null
@@ -71,6 +76,17 @@ Return ONLY valid JSON, no prose, no markdown fences:
 - `"not_yet"` — not started, stays pending
 
 **`newAssignments`** — array of page numbers the user wants to start memorizing, extracted from natural language (e.g. "starting 61 and 62 today").
+
+## Weakness Score Updates
+
+For every reviewed page, compute the new weaknessScore using the
+page's current score from hifz.json:
+
+- **Clean review** (no flag): `newScore = currentScore × 0.8`
+- **General weakness flag**: `newScore = min(currentScore + 0.3, 1.0)`
+- **Mutashabih or transition flag**: `newScore = min(currentScore + 0.2, 1.0)`
+
+Include the computed scores in the output under `scoreUpdates`.
 
 ## Rules
 

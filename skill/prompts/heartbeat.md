@@ -56,4 +56,7 @@ Generate today's hifz plan:
 
 ## Rules
 
+- If 3 or more pages in the same juz have weaknessScore above the
+  promotion threshold, recommend a full juz review session instead of
+  scheduling those pages individually
 - Do not explain your reasoning — output the message only
