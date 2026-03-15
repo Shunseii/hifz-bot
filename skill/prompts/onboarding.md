@@ -89,6 +89,7 @@ Once confirmed:
     // one entry per memorized page with correct initial tier,
     // reviewCount: 0, weaknessScore based on their assessment
     // (see references/weakness-scoring.md for initial value guidelines)
+    // do not set lastReviewed — it will be set after the first session
   }
 }
 ```

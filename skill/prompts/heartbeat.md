@@ -19,6 +19,13 @@ Generate today's hifz plan:
 5. Surface weakness notes as flags under relevant pages
 6. Estimate time per block and total
 
+## Edge Cases
+
+- If a page has no `lastReviewed`, treat it as highest priority
+  within its tier (never been reviewed, schedule as soon as possible)
+- If a page has no `lastAssigned` or `consecutiveMisses`, treat as
+  no previous assignment
+
 ## Scheduling Rules
 
 - 🔴 always included unless time budget is zero
