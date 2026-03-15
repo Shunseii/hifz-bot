@@ -75,8 +75,10 @@ After generating the schedule, update hifz.json:
 3. For pages with `consecutiveMisses` ≥ 5, auto-demote to `weak`
    tier regardless of current tier
 
-This must happen silently — do not mention assignment tracking
-to the user in the message.
+Do not mention assignment tracking mechanics to the user. However,
+if a page has 3+ consecutive misses, include a gentle note in the
+schedule (e.g. "page 12 has been on your schedule for 3 days —
+try to get to it today").
 
 ## Rules
 
