@@ -267,7 +267,7 @@ crontab -e
 Add:
 
 ```
-0 2 * * * cd ~/hifz-bot-data && cp ~/.openclaw/skills/hifz/data/hifz.json hifz.json && cp ~/.openclaw/workspace/MEMORY.md MEMORY.md && git add . && git commit -m "backup $(date +\%F)" && git push origin master 2>/dev/null
+0 2 * * * cd ~/hifz-bot-data && cp ~/.openclaw/skills/hifz/data/hifz.json hifz.json 2>/dev/null; cp ~/.openclaw/workspace/MEMORY.md MEMORY.md 2>/dev/null; git add . && git diff --cached --quiet || git commit -m "backup $(date +\%F)" && git push origin master
 ```
 
 ---
@@ -323,7 +323,7 @@ git add .
 git commit -m "describe your change"
 git push origin master
 
-# VPS
+# VPS (as hifzbot user)
 cd ~/hifz-bot
 git pull origin master
 ./deploy.sh
