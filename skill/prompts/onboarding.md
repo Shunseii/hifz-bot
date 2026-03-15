@@ -55,7 +55,7 @@ Collect the following information in order, one question at a time:
    - Weakness score threshold for that promotion?
      (suggest: 0.2, explain it means mostly clean reviews)
    - How many total reviews before a 🔵 page moves to 🟡?
-     (suggest: 12)
+     (suggest: 5)
 
 ### Stage 5 — Soft Preferences
 

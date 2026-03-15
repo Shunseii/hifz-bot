@@ -147,6 +147,12 @@ in `reviewEntries`:
 | 🟡 | `established` |
 | 🟢 | `new` |
 
+## Review Count
+
+Increment `reviewCount` by 1 for every page in `reviewedPages`. Each
+session log is one increment per page — if the user logs multiple
+sessions in a day, each log increments separately.
+
 ## Rules
 
 - Never output anything other than the JSON object
