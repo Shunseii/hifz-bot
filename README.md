@@ -49,7 +49,6 @@ Before setting up the VPS you need:
 - An [Anthropic](https://console.anthropic.com) API key (Claude Sonnet)
 - A [Thaura](https://thaura.ai) API key
 - A Discord bot token — see [Discord setup](#discord-setup) below
-
 ---
 
 ## Discord Setup
@@ -169,6 +168,20 @@ Disable memory search (not needed — the bot reads `MEMORY.md` and
 ```bash
 openclaw config set agents.defaults.memorySearch.enabled false
 ```
+
+**Optional: Cloudflare AI Gateway** — routes API requests through
+Cloudflare for request logging, analytics, and debugging.
+
+1. Log into the [Cloudflare dashboard](https://dash.cloudflare.com) and go to **AI** > **AI Gateway** > **Create Gateway**
+2. Name it (e.g. `hifz-bot`) and click **Create**
+3. Run the onboard command to add the provider:
+   ```bash
+   openclaw onboard --auth-choice cloudflare-ai-gateway-api-key
+   ```
+   Enter your Cloudflare Account ID, Gateway ID, and API key when
+   prompted. This is safe to re-run — it merges with your existing
+   config.
+4. Add `CLOUDFLARE_AI_GATEWAY_API_KEY` to your `~/.openclaw/.env`
 
 Verify the gateway is running:
 
