@@ -8,7 +8,8 @@ echo "Deploying skill files..."
 mkdir -p ~/.openclaw/skills/hifz
 cp skill/SKILL.md ~/.openclaw/skills/hifz/
 cp -r skill/prompts ~/.openclaw/skills/hifz/
-cp -r skill/data ~/.openclaw/skills/hifz/
+mkdir -p ~/.openclaw/skills/hifz/data
+cp skill/data/quran-index.json ~/.openclaw/skills/hifz/data/
 
 echo "Disabling heartbeat..."
 openclaw config set agents.defaults.heartbeat.every "0m"
